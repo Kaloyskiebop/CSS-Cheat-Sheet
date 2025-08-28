@@ -273,11 +273,12 @@ main {
 }
 
 .practices-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin: 30px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0px 30px 30px 30px;
     padding: 20px;
     width: auto;
     height: auto;
@@ -285,8 +286,7 @@ main {
 }
 
 .practices-topic-container {
-    display: flex;
-    width: 80vw;
+    width: 35vw;
     padding: 30px;
     border-radius: 10px;
     background-color: #2e2e2e;
@@ -299,8 +299,39 @@ main {
     color:#F0F0F0;
 }
 
-.practices-container select {
+.topic-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
 
+.topic-content p {
+    font-family: "Arimo", sans-serif;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-left: 24px
+}
+
+.practices-topic-container {
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #2e2e2e;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.practices-topic-container:hover {
+    transform: scale(1.00);
+    background-color: #313131;
+}
+
+.practices-topic-container:hover .topic-content {
+    max-height: 1000px; 
+    opacity: 1;
 }
 
 
